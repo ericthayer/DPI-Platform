@@ -1,0 +1,184 @@
+<!doctype html>
+<!--[if IE 8]><html class="no-js ie9 ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+  <head>  
+    <!-- Webfont Loading -->
+	  <script>
+		  WebFontConfig = {
+		    google: { families: [ 'FontHere', 'FontHere', 'FontHere' ] }
+		  };
+		  (function() {
+		    var wf = document.createElement('script');
+		    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+		      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+		    wf.type = 'text/javascript';
+		    wf.async = 'true';
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(wf, s);
+		  })(); 
+  	</script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CORE :: Site Copyright</title>
+    <meta name="description" content="Site description goes here.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="../waas/CMS/App_Themes/ThemeName/images/touch-icons/favicon-144.png">
+    <!--[if IEMobile]><meta http-equiv="cleartype" content="on" /><![endif]-->
+    <link rel="apple-touch-icon" href="../waas/CMS/App_Themes/ThemeName/images/touch-icons/favicon-152.png">   		
+    <!-- Core CSS -->   		
+    <link rel="stylesheet" href="http://cdn.kyamedia.com/css/core.css">
+    <!-- Non-Critical CSS --> 
+    <script>
+       /*! loadCSS: load a CSS file asynchronously. [c]2016 @scottjehl, Filament Group, Inc. Licensed MIT */
+      (function(w){
+      	"use strict";
+      	/* exported loadCSS */
+      	var loadCSS = function( href, before, media ){
+      		// Arguments explained:
+      		// `href` [REQUIRED] is the URL for your CSS file.
+      		// `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+      			// By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+      		// `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+      		var doc = w.document;
+      		var ss = doc.createElement( "link" );
+      		var ref;
+      		if( before ){
+      			ref = before;
+      		}
+      		else {
+      			var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+      			ref = refs[ refs.length - 1];
+      		}
+      
+      		var sheets = doc.styleSheets;
+      		ss.rel = "stylesheet";
+      		ss.href = href;
+      		// temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+      		ss.media = "only x";
+      
+      		// wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+      		function ready( cb ){
+      			if( doc.body ){
+      				return cb();
+      			}
+      			setTimeout(function(){
+      				ready( cb );
+      			});
+      		}
+      		// Inject link
+      			// Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+      			// Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+      		ready( function(){
+      			ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+      		});
+      		// A method (exposed on return object for external use) that mimics onload by polling until document.styleSheets until it includes the new sheet.
+      		var onloadcssdefined = function( cb ){
+      			var resolvedHref = ss.href;
+      			var i = sheets.length;
+      			while( i-- ){
+      				if( sheets[ i ].href === resolvedHref ){
+      					return cb();
+      				}
+      			}
+      			setTimeout(function() {
+      				onloadcssdefined( cb );
+      			});
+      		};
+      
+      		function loadCB(){
+      			if( ss.addEventListener ){
+      				ss.removeEventListener( "load", loadCB );
+      			}
+      			ss.media = media || "all";
+      		}
+      
+      		// once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+      		if( ss.addEventListener ){
+      			ss.addEventListener( "load", loadCB);
+      		}
+      		ss.onloadcssdefined = onloadcssdefined;
+      		onloadcssdefined( loadCB );
+      		return ss;
+      	};
+      	// commonjs
+      	if( typeof exports !== "undefined" ){
+      		exports.loadCSS = loadCSS;
+      	}
+      	else {
+      		w.loadCSS = loadCSS;
+      	}
+      }( typeof global !== "undefined" ? global : this ));
+      
+      loadCSS( "http://cdn.kyamedia.com/css/async.css" );
+    
+    </script>
+    <!-- Theme CSS -->   		
+    <link rel="stylesheet" href="../waas/CMS/App_Themes/Cornerstone/theme.css">
+    <!-- Theme Color -->   		
+    <link rel="stylesheet" href="../waas/CMS/App_Colors/cool-blue/theme-color.css">
+  	<!-- Modernizr -->
+  	<script src="http://cdn.kyamedia.com/js/modernizr.js"></script>
+  	<!-- noscript fallbacks -->
+  	<noscript>
+  	  <link rel="stylesheet" href="http://cdn.kyamedia.com/css/async.css">
+  	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=FontHere">  	  
+  	</noscript>  	
+  </head>
+  <body class="ContentBody">
+	  <!--[if lt IE 10]>
+      <p class="update-browser">This browser version is not recommended. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+  		<div class="site-wrap">		  					    
+        <!-- *** Demo Container *** -->
+        <main class="site-content">
+          <!-- *** Demo Info - Collapsible Panel *** -->
+          <div class="demo-collapse" role="tablist" aria-multiselectable="true">
+            <!-- Panel -->
+            <div class="panel">
+              <div class="panel-heading" role="tab" id="heading-one">
+                <h4 class="title">
+                  <a role="button" data-toggle="collapse" href="#collapse-one" aria-expanded="true" aria-controls="collapse-one" class="collapsed">
+                  <span class="title-txt"><span class="pre inline">.site-copyright</span></span>
+                  <div class="panel-close">
+                  <svg class="icon-info" baseProfile="basic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M0 0v32h32v-32h-32zm19.712 23.616c-1.664 1.568-2.848 2.56-3.648 3.008-.832.48-1.536.704-2.112.704-.576 0-1.024-.192-1.376-.544-.352-.384-.512-.864-.512-1.472 0-1.568.864-5.152 2.688-11.04.032-.128.064-.224.064-.32l-.256.128c-.16.096-.608.448-1.92 1.76-.128.096-.256.16-.384.16s-.256-.032-.352-.128l-.768-.608c-.128-.096-.224-.224-.224-.384 0-.128.032-.288.128-.416 1.248-1.344 2.368-2.304 3.392-2.88 1.088-.608 1.984-.896 2.784-.896.512 0 .896.128 1.216.352.32.288.512.672.512 1.12 0 .288-.16 1.056-1.184 4.544-1.504 5.024-1.856 6.816-1.856 7.424.288-.192.928-.64 2.368-1.984.128-.096.256-.16.384-.16s.288.064.384.16l.704.672c.096.096.16.256.16.416 0 .128-.064.288-.192.384zm.672-15.392c-.48.512-1.024.768-1.632.768-.512 0-.96-.192-1.28-.544-.352-.352-.512-.8-.512-1.344 0-.672.224-1.248.64-1.728.448-.512 1.024-.736 1.632-.736.512 0 .96.16 1.312.512.352.352.512.8.512 1.312 0 .672-.224 1.248-.672 1.76z" /></svg>
+                  <svg class="icon-close" baseProfile="basic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 0c-8.864 0-16 7.136-16 16 0 8.832 7.136 16 16 16 8.832 0 16-7.168 16-16 0-8.864-7.168-16-16-16zm5.632 17.504h-4.128v4.128c0 .832-.672 1.504-1.504 1.504-.864 0-1.536-.672-1.536-1.504v-4.128h-4.128c-.832 0-1.504-.672-1.504-1.504 0-.864.672-1.536 1.504-1.536h4.128v-4.128c0-.832.672-1.504 1.536-1.504.832 0 1.504.672 1.504 1.504v4.128h4.128c.832 0 1.504.672 1.504 1.536 0 .832-.672 1.504-1.504 1.504z"/></svg></div>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse-one" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-one">
+                <!-- Panel Body -->
+                <div class="panel-body">
+                 <p><strong>Site Copyright</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>        
+          <!-- *** WEB PART CODE STARTS HERE *** -->
+          
+         <!-- Site Copyright -->
+         <section class="site-copyright">
+           <div class="container">  
+             <p>Copyright 2016 &copy; Name of Company. All rights are reserved.</p>
+             <a href="#">Privacy Policy</a> <a href="">Terms of Service</a>
+           </div>
+         </section>
+        
+        
+        
+        
+        <!-- *** END *** -->
+      </main>      
+    </div>
+    <!-- Dependencies -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://cdn.kyamedia.com/js/libs/jquery-2.1.4.min.js"><\/script>')</script>
+    <!-- Core Scripts -->
+    <script src="http://cdn.kyamedia.com/js/min/core.min.js"></script>
+    <!-- Theme Scripts -->
+		<script src="../waas/CMS/CMSScripts/Custom/Cornerstone/theme.min.js"></script>
+  </body>
+</html>

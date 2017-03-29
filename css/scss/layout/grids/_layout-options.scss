@@ -1,0 +1,296 @@
+// Layout Options
+
+.media-left {
+  
+// align left is default
+  
+}
+
+.media-right {
+  
+  
+  // > 667
+  @media (min-width: $break-ml-phone) {
+    .post-wrap {
+      flex-flow: row wrap;
+    }
+    .post-media {
+      padding-left: 5%;  
+      padding-right: 0; 
+    }
+  }
+  
+}
+
+
+// Content Left
+
+.content-left {
+  text-align: left;
+  .button-wrap {
+    justify-content: flex-start;  
+  }
+  // Post Text
+  .post-text,
+  .post-text .button-wrap {
+    padding-right: 0;
+    padding-left: 0;  
+  }
+  
+
+  // > 667
+  @media (min-width: $break-ml-phone) {
+    
+    // content on left
+    .post-wrap {
+      flex-flow: row wrap;
+    }
+    
+    // media
+    .post-media {
+      padding-right: 0;
+      padding-left: 5%;  
+    }
+       
+  }
+  
+  // > 1200
+  @media (min-width: $break-lg-screen) {
+    
+    
+  }
+  
+}
+
+
+// Content Right
+
+.content-right {
+  
+  // > 480
+  @media (min-width: $break-sm-phone) {
+    
+    // Hero Banner
+    &.hero-banner {
+      //text-align: left;
+      .button-wrap {
+        //justify-content: flex-start;
+      }
+    }
+  }
+  
+  // > 540
+  @media (min-width: $break-md-phone) {
+    
+    text-align: right;
+    .button-wrap {
+      justify-content: flex-end;
+    }
+    
+    // Hero Banner
+    &.hero-banner {
+      .content-post {
+        //padding-left: 25%;
+      }
+      .post-text {
+        //padding-left: 2em;  
+      } 
+    }
+    
+  }
+  
+  // > 1200
+  @media (min-width: $break-lg-screen) {
+    
+    // Hero Banner
+    &.hero-banner {
+      .content-post {
+        //padding-left: 45%;
+      }
+    }
+    
+  }
+    
+}
+
+
+// Content Center
+
+.content-center {
+  
+  text-align: center;
+        
+  // Button Wrap    
+  .button-wrap {
+    justify-content: center;
+  }
+  
+  // Banner Styles
+  &.hero-banner,
+  &.content-banner {
+    //text-align: center;
+    // Button Wrap    
+    .button-wrap {
+      //justify-content: center;
+    } 
+  }
+  
+  // > 540
+  @media (min-width: $break-md-phone) {
+    
+    //text-align: center;
+        
+    // Button Wrap    
+    .button-wrap {
+      //justify-content: center;
+    }
+    
+    // Hero Banner
+    &.hero-banner {
+      .post-text {
+        margin: 0 auto;  
+        max-width: 50em;  
+      }
+    }
+    
+  }
+  // > 667
+  @media (min-width: $break-ml-phone) {        
+    &.hero-banner,
+    &.content-banner {
+      .post-title {
+        padding-right: 2em;
+        padding-left: 2em;
+      }
+    }  
+  }
+  
+}
+
+
+// Column: Media on Top
+
+.post-col {
+  
+  // This flips media on top
+  .post-wrap {
+    flex-flow: column-reverse;
+  }
+  // Content / Media
+  .post-content,
+  .post-media {
+    padding-right: 0;
+    padding-left: 0;  
+    width: 100%;  
+  }
+  .post-content {  
+    margin-bottom: 0;
+  }
+  .post-media {
+    margin-bottom: 1em;
+    padding-right: 0;  
+  }
+  
+}
+
+
+// Column: Media on Bottom
+
+.post-col-rev {
+  
+  // This ensures media on the bottom
+  .post-wrap {
+    flex-flow: column;
+  }    
+  .post-content,
+  .post-media {
+    width: 100%;  
+  }
+  .post-content {  
+    margin-bottom: 1em;
+  }
+  .post-media {
+    margin-bottom: 0;
+    padding-right: 0;  
+  }
+  
+}
+
+// Post Content / Post Media sizes
+
+.pc1-pm3 {
+  
+  // > 667
+  @media (min-width: $break-ml-phone) {
+    
+    .post-content {
+      width: 33%; 
+    }
+    .post-media {
+      width: 67%; 
+    }
+  }
+  
+}
+
+.pc3-pm1 {
+  
+  // > 667
+  @media (min-width: $break-ml-phone) {
+    .post-content {
+      width: 67%; 
+    }
+    .post-media {
+      width: 33%; 
+    }
+  }
+  
+}
+
+.pc1-pm1 {
+  
+  // > 667
+  @media (min-width: $break-ml-phone) {
+    .post-content {
+      width: 50%; 
+    }
+    .post-media {
+      width: 50%; 
+    }
+  }
+  
+}
+
+// BG alignment
+
+.bg-top {
+  background-position: center top;
+}
+
+.bg-right {
+  background-position: right center;
+}
+
+.bg-bottom {
+  background-position: center bottom;
+}
+
+.bg-left {
+  background-position: left center;
+}
+
+.bg-left-top {
+  background-position: left top;
+}
+
+.bg-right-top {
+  background-position: right top;
+}
+
+.bg-left-bottom {
+  background-position: left bottom;
+}
+
+.bg-right-bottom {
+  background-position: right bottom;
+}

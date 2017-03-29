@@ -1,0 +1,144 @@
+.site-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // this fixes iOS bug
+  .IE & {
+    flex-direction: row;
+    flex-wrap: wrap;
+  } 
+  .IE11 & {
+    height: 100vh; 
+  }
+  .IE10 & {
+    height: 100%; 
+  } 
+}
+
+.site-header,
+.site-footer {
+  flex-shrink: 1;   
+}
+
+.site-content { 
+  flex-grow: 1;
+  margin: 0 auto;
+  width: 100%;    	
+}
+
+// Page Content
+
+.page-content {
+  @include container;
+}
+
+// Content Main
+.content-main,
+.sidebar-main {
+  display: inline-block; 
+}
+
+// Sidebar Main
+.sidebar-main {
+  .container {
+    padding-top: 1em;
+    padding-bottom: 1em;  
+  }
+}
+
+// Two Col Layout
+  
+// 800
+@media (min-width: $break-800) {
+  .page-content {
+    display: flex;
+    flex-flow: row wrap; 
+  }
+  .content-main {
+    flex: 3 0 65%;
+    width: 68%;
+  }
+  .sidebar-main {
+    flex: 1 0 30%; 
+    width: 30%;
+    // use this when a bg is defined
+    //& > section {
+      //padding-top: 1em;
+      //padding-bottom: 1em;   
+    //}
+    //section,
+    //div {
+      //& > .container,
+      //& >.container {
+        //padding-right: 0;
+        //padding-left: 0;
+      //}  
+    //}
+  }
+}
+
+// shift sidebar to the left @ 1600
+//@media (min-width: $break-xxl-screen) {
+  //.two-col {
+    //.page-content {
+      //flex-flow: row-reverse wrap;
+    //}
+    //.content-main {
+      //padding-right: 0;
+      //padding-left: 2.5%;
+      //width: 80%;  
+    //}
+    //.sidebar-main {
+      //width: 20%; 
+    //}
+  //}
+//}
+
+// Content Header
+
+.content-header {
+  .content-post,
+  .post-content {
+    margin-bottom: 0; 
+    padding-bottom: 0;  
+  }
+  
+  // 667 ~ 1200
+  @media (min-width: $break-ml-phone) and (max-width: $break-lg-screen) {      
+    .two-col & { 
+      .post-wrap {
+        //flex-flow: column-reverse;
+      }
+      .post-content,
+      .post-media {
+        //width: 100%;  
+      }
+      .post-content {
+        //padding-top: 1.5em; 
+        //padding-left: 0;  
+      }
+    }
+  }
+  //  800 ~ 1200
+  @media (min-width: $break-800) and (max-width: $break-lg-screen) {
+    .two-col & {
+      //padding-top: 0;
+    } 
+  }
+  // > 1200
+  @media (min-width: $break-lg-screen) {
+    .two-col & {
+      padding-right: 0;   
+      .post-wrap {
+        flex-flow: row-reverse wrap;
+      }
+      .post-content {
+        padding-top: 0; 
+        padding-left: 3%;
+        width: 60%;   
+      }
+      .post-media {
+        width: 40%;
+      }
+    }
+  }
+}

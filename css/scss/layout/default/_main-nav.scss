@@ -1,0 +1,612 @@
+// Main Nav
+
+.main-nav {
+  padding-top: 0;
+  padding-bottom: 0;       
+	position: relative;
+	z-index: 2;
+	width: 100%;  
+	.container,
+	nav {
+  	display: inline-block;  
+		position: relative;     
+  }
+  // 800
+  @media (min-width: $break-800) {
+    width: auto;  
+  }  
+}
+
+// Site Logo
+
+.site-logo {
+  display: inline-block;  
+  font-size: 2em;
+  line-height: 40px;      
+  margin: { 
+    right: auto;
+    bottom: 0;
+    left: auto; 
+  }
+  padding-top: 0;
+  padding-bottom: .313em;   
+  position: relative;   
+  text-align: center;    
+	width: 100%;
+	z-index: 3; 
+	a {
+  	width: 100%;  
+	}
+	img {
+  	vertical-align: middle; 
+  }
+  .IE & {
+    //height: 60px;
+  } 
+}
+
+// Multi Level Nav
+
+// < 800
+@media (max-width: $break-800) {
+  .js-nav .nav-collapse.multiple-level-nav.opened.dropdown-active {
+    max-height: 9999px !important;
+  }
+  
+
+  .js-nav .nav-collapse.multiple-level-nav .sub-menu {
+    clip: rect(0 0 0 0);
+    max-height: 0;
+    position: absolute;
+    display: none; /* This way you don't have focus on sub menu items unless you open the sub menu. */
+    overflow: hidden;
+    zoom: 1;
+    li {
+      line-height: normal;
+    }
+  }
+
+  .js-nav .nav-collapse.multiple-level-nav .sub-menu.toggled {
+    display: block;  
+    max-height: 5000px;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
+    transition: max-height .4s ease; 
+  }
+  
+  .dropdown-toggle {
+    background-color: transparent;
+    border-radius: 0;
+    content: "";
+    //font-family: $font-icon;
+    height: 3.125em;
+    width: 3.125em;
+    padding: 0;
+    position: absolute;
+    margin: 0;
+    text-transform: lowercase;
+    transition: background .4s ease;
+    top: 0;
+    right: 0;
+    z-index: 1002;
+    .icon {
+      height: 30px;
+      width: 30px;  
+      margin-right: 0;
+      margin-left: 0;
+      top: 0;
+      left: 0.125em; 
+      pointer-events: none;  
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      
+    }
+    &.toggled  {
+      .icon {
+        transform: rotate(45deg);
+      }
+    }
+  }
+// END
+}  
+
+// Site Nav
+
+.nav-collapse {
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  text-align: left;
+  width: 100%; 	
+  & > ul {
+    list-style: none;
+    padding-top: 1em; 
+    width: 100%;
+   }
+  li {   
+    width: 100%;
+    position: relative;
+    z-index: 1002;		
+    & > a {  	  
+  	  display: inline-block;
+  	  padding: 0.85em 0.5em 0.85em 0.7em;
+  	  position: relative;   	
+  	  width: 100%;
+  	  text-decoration: none;
+  	  transition: background .4s ease, 
+  	              color .4s ease, 
+  	              padding .4s ease;
+      -webkit-font-smoothing: auto;
+  	  z-index: 1001; 
+  	}
+  	&:last-child {
+  		margin-bottom: 0; 
+  	}
+  }
+  li[aria-haspopup="true"] {
+  	z-index: 1001; 
+  }
+	// Submenu
+  .sub-menu {
+    padding-top: 0; 
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .4s ease,
+                max-height .4s ease;
+    & > li {
+  	   
+  	  & > a { 
+  		  padding: 0.75em;
+  		  text-transform: none;
+  		  transition: all .4s ease; 	
+  		}
+  	}
+  	li:hover a {
+  	
+  	}
+  	.sub-menu {
+  		li > a {
+        
+        &:hover {
+          
+      	}
+  		}
+  		.dropdown-toggle {
+      	&.toggled  {
+          
+        }
+    	}
+  	}
+  	.dropdown-toggle {
+    	&.toggled  {
+        
+      }
+  	}
+  }
+	.active {
+		a {
+							
+		}
+	}
+  li:hover {
+		a {
+			
+		}			
+	}
+}
+
+// Nav Toggle
+
+.nav-toggle {
+	display: block;
+	border-radius: 4px;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-shadow: none;
+  text-indent: -999px;
+  user-select: none;
+  max-width: 100px; 
+  margin-right: auto;
+  margin-left: auto;  
+  width: 100%; 
+  -webkit-touch-callout: none;
+  // This is where you chose the mobile icon, or button text.
+  &:before {
+  	border-radius: 4px;
+    content: "menu";
+    font: {
+      weight: 500;
+      size: 1em;
+      family: $sans-serif;
+      variant: normal;
+    }
+    position: absolute;
+    top: 0;
+    left: 0;   	
+    speak: none;
+    line-height: 40px;
+    margin: 0 auto;
+    text-indent: 0;
+    text-align: center;    
+    width: 100%; 
+    transition: background .3s ease, width .4s ease;
+    -webkit-font-smoothing: subpixel-antialiased;	
+  }
+}
+
+// Nav Toggle Active
+
+.nav-toggle.active {
+  width: 100%;    
+  &:before {
+  	content: 'close';
+  	//font-size: 1.5em;
+  	//font-family: $font-icon;
+  	//font-weight: 500;  
+    line-height: 40px;
+    height: 40px; 		
+    text-shadow: none;
+  }
+}
+
+
+// > 320
+@media (min-width: $break-tiny-phone) {
+  
+  .site-logo {
+    flex: 1 0 25%;
+    float: left;   
+    margin-bottom: 0;
+    margin-left: 0; 
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+    z-index: 1; 
+	}
+	
+	.main-nav {
+    flex: 1 0 100%;
+    margin-top: -40px;     
+  }
+	
+	.nav-toggle {
+  	//flex: 1 0 auto;
+  	float: right; 
+    align-self: center; 
+    margin-right: 0;
+    margin-left: auto; 
+    max-width: 75px;
+    &:before {
+      font-size: 1em;   
+    }
+	}
+
+}
+
+// Show Nav @ 800 
+@media (min-width: $break-800) {
+  
+  .site-logo {
+    flex: 1 0 20%;
+    width: auto;  
+  }
+  
+  .main-nav {
+    flex: 1 0 80%;
+    margin-top: 0;
+    width: auto;         
+  }
+  
+  .nav-toggle,
+  .dropdown-toggle {
+    display: none;  
+  }
+     
+  .js-nav .nav-collapse,
+  .nav-collapse {  
+    max-height: 100%;
+    height: auto;
+    overflow: visible;
+    .no-flexbox & {
+      display: inline-block;  
+    }
+  }
+  
+  .dropdown ul ul {
+    border: 0;
+    padding: 0;
+  }
+  
+  .nav-collapse { 
+		& > ul {	
+			display: flex;
+			align-items: center;
+			justify-content: flex-end; 
+			padding-top: 0; 
+			position: relative;	
+			width: auto;
+		}	
+	  & > ul > li {
+		  flex: 0 1 auto; 
+		  margin-left: 2em;
+		  width: auto;  
+	    .icon {
+    		height: 20px;
+    		width: 20px;   
+    	}
+		  & > a {			  
+		    margin: 0;
+		    padding-top: 0;
+		    padding-right: 0;
+		    padding-bottom: 0;
+		    padding-left: 0;
+		    height: auto; 	
+		    text-align: right;
+		    position: relative;
+		    transition: color .4s ease,
+		                padding .4s ease;
+		    z-index: 1001;
+		  }
+		  &:nth-last-child(n+4), 
+      &:nth-last-child(n+4) ~ * {
+  
+      }
+      &:nth-last-child(n+6), 
+      &:nth-last-child(n+6) ~ * {
+        & > a { 
+          font-size: .875em;
+        }
+      }
+	  }
+	  
+	  // Sub Menu
+	  	
+		.sub-menu {
+  		//display: none;  
+		  position: absolute;
+		  top: 0;
+		  left: 0; 
+		  padding-top: 0;
+		  padding-top: 3em;
+		  pointer-events: none;
+		  width: 100%;
+		  max-height: 0;
+		  width: 300px;
+		  transition: opacity .4s ease,
+                  max-height .4s ease,
+                  padding .5s ease;
+		  z-index: 1000;
+		  & > li {
+			  display: block;
+			  width: 100%;
+			  z-index: 1000;  				  
+				& > a {	
+					display: block;
+					font-size: .875em;
+					font-size: .875rem;  
+					height: auto;  
+					text-align: left;					
+					padding: .7em 1em;
+					width: 100%;  
+					visibility: visible;	
+				}				
+			}
+			// Sub Menu Dropdown
+			& > li.focus-nav {
+  			.sub-menu {
+    			display: block;
+    			max-height: 999px;
+    			opacity: 1;   
+    			padding-top: 0;   
+  			}
+			}
+			
+			// Sub Sub Menu
+			
+			.sub-menu {
+  			//display: none;  
+  			//opacity: 1;
+  			max-height: 0;
+  			padding-top: 0;   
+    		top: 0; 
+    		left: 300px;
+    		//position: relative;   
+    		li > a {
+          &:hover {
+        	}        		
+    		} 
+  		}
+	  }
+	  
+	  // Last Nav Item
+	  
+	  & > ul > li:last-child,
+	  & > ul > li:nth-last-child(2) {	  
+  	  & > .sub-menu {
+  			left: auto;
+  			right: 0;
+  			.sub-menu {
+    			left: auto;
+    			right: 300px; 
+  			}  
+  		}
+		}
+		
+		// Hover State
+		
+		& > ul > li:hover,
+		& > ul > li:focus {
+			cursor: pointer;
+			& > a {
+				
+			}			
+		}
+		
+		// Dropdown
+		
+		& > ul > li[aria-haspopup="true"] {  
+  		position: relative;
+  		a {
+    		//position: relative;
+    		//z-index: 1002;
+  		}
+  		.dropdown-toggle {
+    		//display: none;  
+  		}
+			& > a:after {
+			  //content: '\e818';
+        //font-family: $font-icon;
+        //font-size: 0.875em;
+        //padding-left: 0.5em;
+        //width: 0.938em;	
+			}
+		}
+		
+		.sub-menu > li[aria-haspopup="true"] {
+  		& > a {
+    		display: table;
+  		}
+			& > a:after {
+        //display: block; 
+  			//background: #BBB;
+  			//position: absolute;
+  			//top: 0;
+  			//right: 0;
+  			//height: 30px;
+  			//width: 30px;
+  			//z-index: 1003; 			
+			  //content: '\e805';			   
+        //font-family: $font-icon;
+        //font-size: 1.125em;
+        //padding-left: 0;
+        //text-align: right;  
+        //width: auto;
+        // default style
+        //content: '\e818';
+        //display: table-cell;
+        //font-family: $font-icon;
+        //font-size: 0.875em;
+        //padding-left: 0.5em;
+        //width: 0.938em;	
+			}
+			&.focus-nav {
+  			& > a:after {
+  			  //content: '\e804';
+  		  }
+			}
+		}
+		
+		
+		// Dropdown Hover
+		
+		& > ul > li[aria-haspopup="true"]:hover,
+		& > ul > li[aria-haspopup="true"]:focus {  		
+			& > .sub-menu {
+				padding-top: 1.5em;
+				pointer-events: all;
+				//display: block;   
+				max-height: 9999px;
+				opacity: 1;
+				overflow: visible;  
+			}  
+		}
+		
+		.sub-menu > li[aria-haspopup="true"]:hover,
+		.sub-menu > li[aria-haspopup="true"]:focus {
+  		& > .sub-menu {
+    		//display: block;
+    		pointer-events: all; 
+				max-height: 9999px;
+				opacity: 1;
+				overflow: visible;  
+			}
+		}
+	}  
+}
+
+// > 1600
+@media (min-width: $break-xl-screen) {
+  .nav-collapse {
+    float: right; 
+    max-width: 65em;
+    width: 100%;     
+    & > ul > li {
+  	  &:nth-last-child(n+4), 
+      &:nth-last-child(n+4) ~ * {
+        flex: 1 0 auto;
+        //margin-left: 4em; 
+      }  
+    }
+  }
+}
+
+ // fallbacks
+ 
+.no-flexbox {
+   
+  .site-logo
+  .main-nav {
+    display: inline-block; 
+  }
+  
+  // > 320
+  @media (min-width: $break-tiny-phone) {
+    .site-logo {
+      float: left;  
+      text-align: left; 
+    }
+    .main-nav {
+      float: right;     
+      width: 100%;   
+    }
+    .nav-toggle {
+      float: right; 
+      margin: 0;  
+    }  
+  }
+  
+  // 800
+  @media (min-width: $break-800) {
+    
+    .site-logo {
+      line-height: 30px;  
+      width: 15%; 
+    }
+    
+    .main-nav {
+      line-height: 30px;  
+      width: 85%; 
+    }
+    
+    .nav-collapse {
+    	display: inline-block; 
+    	@include clearfix;
+    	& > ul {
+      	display: inline-block;
+      	float: right;   
+      	width: auto;
+      	& > li {
+         	float: left;
+         	margin-left: 2em;
+         	// 900
+         	@media (min-width: $break-900) {
+           	margin-left: 3em;  
+         	}
+         	// 1200
+         	@media (min-width: $break-lg-screen) {
+           	margin-left: 4em;  
+         	} 
+      	}     
+    	}      	 
+  	}  	
+  }   
+   
+}
+
